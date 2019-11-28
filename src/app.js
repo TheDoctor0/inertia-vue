@@ -33,7 +33,7 @@ export default {
       initialPage: this.initialPage,
       resolveComponent: this.resolveComponent,
       updatePage: (component, props, { preserveState }) => {
-        this.component = component
+        this.component = component.options || component
         this.props = this.transformProps(props)
         this.key = preserveState ? this.key : Date.now()
       },
@@ -48,7 +48,7 @@ export default {
 
       if (this.component.layout) {
         if (typeof this.component.layout.options !== 'undefined') {
-          this.component.layout = this.component.layout.options;
+          this.component.layout = this.component.layout.options
         }
 
         if (typeof this.component.layout === 'function') {
