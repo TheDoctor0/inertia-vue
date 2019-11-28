@@ -47,6 +47,10 @@ export default {
       })
 
       if (this.component.layout) {
+        if (typeof this.component.layout.options !== 'undefined') {
+          this.component.layout = this.component.layout.options;
+        }
+
         if (typeof this.component.layout === 'function') {
           return this.component.layout(h, child)
         }
