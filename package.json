@@ -13,8 +13,8 @@
   "typings": "index.d.ts",
   "scripts": {
     "build": "npm run build:cjs && npm run build:umd",
-    "build:cjs": "microbundle --format cjs",
-    "build:umd": "microbundle --format umd --name InertiaVue --globals vue=Vue,@inertiajs/inertia=Inertia",
+    "build:cjs": "microbundle --format cjs --target node",
+    "build:umd": "microbundle --format umd --target node --name InertiaVue --globals vue=Vue,@inertiajs/inertia=Inertia",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
